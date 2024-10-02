@@ -13,5 +13,30 @@
         <div class="books-container">
             
         </div>
+        <dialog>
+            <div>
+                <label for="title">Title</label>
+                <input id="title" autofocus>
+            </div>
+            <div>
+                <label for="author">Author</label>
+                <input id="author">
+            </div>
+            <div>
+                <label for="pages">Number of Pages</label>
+                <input id="pages" type="number">
+            </div>
+            <div>
+                <label for="status">Status</label>
+                <select id="status">
+                    <option selected disabled>Select Status</option>
+                    <option>READ</option>
+                    <option>NOT READ</option>
+                    <option>READING</option>
+                </select>
+            </div>
+            <button class="add-book">Add Book</button>
+            <button class="cancel">Cancel</button>
+        </dialog>
     </body>
 </html>
