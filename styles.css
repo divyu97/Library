@@ -78,5 +78,59 @@ nav {
 }
 
 .change-status {
+    background-color: rgb(34, 101, 226);
+}
+
+dialog[open] {
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    font-family: Roboto, Arial;
+    font-size: 20px;
+    background-color: bisque;
+    position: fixed; 
+    top: 50%; 
+    bottom: 50%;
+}
+
+dialog div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+dialog div input, select, dialog button {
+    font-family: Roboto, Arial;
+    font-size: 20px;
+    padding: 8px;
+}
+
+dialog div input, select {
+    border: none;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+dialog div input:focus {
+    outline: none;
+    border: 2px solid rgb(23, 182, 182);
+}
+
+dialog button {
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-weight: 500;
     background-color: green;
+    cursor: pointer;
+}
+
+dialog::backdrop {
+    backdrop-filter: blur(2px);
+}
+
+.cancel {
+    background-color: red;
 }
