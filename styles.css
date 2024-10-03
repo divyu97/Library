@@ -11,6 +11,8 @@ nav {
     justify-content: right;
     background-color: rgb(98, 44, 199);
     padding: 16px 16px 16px 0px;
+    position: sticky;
+    top: 0;
 }
 
 .new-book {
@@ -63,7 +65,7 @@ nav {
 
 .book-options {
     display: flex;
-    justify-content: right;
+    justify-content: left;
     column-gap: 8px;
 }
 
