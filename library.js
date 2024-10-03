@@ -40,6 +40,7 @@ function addBookToLibrary() {
         pages.value = "";
         status.value = "Select Status";
         dialog.close();
+        showBooks();
     }   
 }
 
@@ -51,3 +52,39 @@ document.querySelector(".cancel").addEventListener("click", () => {
     status.value = "Select Status";
     dialog.close();
 });
+
+function showBooks() {
+    for (book of library) {
+        let newBook = document.createElement("div");
+        let bookTitle = document.createElement("div");
+        let bookAuthor = document.createElement("div");
+        let bookPages = document.createElement("div");
+        let bookStatus = document.createElement("div");
+        let bookOptions = document.createElement("div");
+        let changeStatus = document.createElement("button");
+        let removeBook = document.createElement("button");
+        newBook.setAttribute("class", "book");
+        newBook.setAttribute("data-index", library.indexOf(book));
+        bookTitle.setAttribute("class", "book-title");
+        bookAuthor.setAttribute("class", "book-author");
+        bookPages.setAttribute("class", "book-pages");
+        bookStatus.setAttribute("class", "book-status");
+        bookOptions.setAttribute("class", "book-options");
+        changeStatus.setAttribute("class", "change-status");
+        removeBook.setAttribute("class", "remove-book");
+        bookTitle.innerHTML = `Title: ${book.title}`;
+        bookAuthor.innerHTML = `Author: ${book.author}`;
+        bookPages.innerHTML = `Number of pages: ${book.pages}`;
+        bookStatus.innerHTML = `Status: ${book.status}`;
+        changeStatus.innerHTML = "CHANGE STATUS";
+        removeBook.innerHTML = "REMOVE";
+        bookOptions.appendChild(changeStatus);
+        bookOptions.appendChild(removeBook);
+        newBook.appendChild(bookTitle);
+        newBook.appendChild(bookAuthor);
+        newBook.appendChild(bookPages);
+        newBook.appendChild(bookStatus);
+        newBook.appendChild(bookOptions);
+        document.querySelector(".books-container").appendChild(newBook);
+    }
+}
