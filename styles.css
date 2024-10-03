@@ -25,6 +25,10 @@ nav {
     cursor: pointer;
 }
 
+.new-book:hover {
+    background-color: rgb(4, 139, 139);
+}
+
 .container-title {
     font-family: Roboto, Arial;
     padding: 16px 0px 16px 32px;
@@ -49,6 +53,7 @@ nav {
     flex-direction: column;
     font-size: 20px;
     background-color: rgb(255, 255, 94);
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
 }
 
 .book-title {
@@ -77,8 +82,16 @@ nav {
     background-color: red;
 }
 
+.remove-book:hover {
+    background-color: rgb(151, 8, 8);
+}
+
 .change-status {
     background-color: rgb(34, 101, 226);
+}
+
+.change-status:hover {
+    background-color: rgb(6, 46, 119);
 }
 
 dialog[open] {
@@ -127,12 +140,20 @@ dialog button {
     cursor: pointer;
 }
 
+dialog button:hover {
+    background-color: rgb(6, 97, 6);
+}
+
 dialog::backdrop {
     backdrop-filter: blur(2px);
 }
 
 .cancel {
     background-color: red;
+}
+
+.cancel:hover {
+    background-color: rgb(133, 9, 9);
 }
 
 .status-options {
