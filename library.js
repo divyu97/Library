@@ -1,4 +1,5 @@
 const dialog = document.querySelector("dialog");
+const books = document.querySelector(".books-container");
 let title = document.querySelector("#title");
 let author = document.querySelector("#author");
 let pages = document.querySelector("#pages");
@@ -40,6 +41,7 @@ function addBookToLibrary() {
         pages.value = "";
         status.value = "Select Status";
         dialog.close();
+        books.innerHTML = "";
         showBooks();
     }   
 }
@@ -54,7 +56,7 @@ document.querySelector(".cancel").addEventListener("click", () => {
 });
 
 function showBooks() {
-    for (book of library) {
+    for (let i = 0; i < library.length; i++) {
         let newBook = document.createElement("div");
         let bookTitle = document.createElement("div");
         let bookAuthor = document.createElement("div");
@@ -64,7 +66,7 @@ function showBooks() {
         let changeStatus = document.createElement("button");
         let removeBook = document.createElement("button");
         newBook.setAttribute("class", "book");
-        newBook.setAttribute("data-index", library.indexOf(book));
+        newBook.setAttribute("data-index", i);
         bookTitle.setAttribute("class", "book-title");
         bookAuthor.setAttribute("class", "book-author");
         bookPages.setAttribute("class", "book-pages");
@@ -72,10 +74,10 @@ function showBooks() {
         bookOptions.setAttribute("class", "book-options");
         changeStatus.setAttribute("class", "change-status");
         removeBook.setAttribute("class", "remove-book");
-        bookTitle.innerHTML = `Title: ${book.title}`;
-        bookAuthor.innerHTML = `Author: ${book.author}`;
-        bookPages.innerHTML = `Number of pages: ${book.pages}`;
-        bookStatus.innerHTML = `Status: ${book.status}`;
+        bookTitle.innerHTML = `Title: ${library[i].title}`;
+        bookAuthor.innerHTML = `Author: ${library[i].author}`;
+        bookPages.innerHTML = `Number of pages: ${library[i].pages}`;
+        bookStatus.innerHTML = `Status: ${library[i].status}`;
         changeStatus.innerHTML = "CHANGE STATUS";
         removeBook.innerHTML = "REMOVE";
         bookOptions.appendChild(changeStatus);
@@ -85,6 +87,11 @@ function showBooks() {
         newBook.appendChild(bookPages);
         newBook.appendChild(bookStatus);
         newBook.appendChild(bookOptions);
+        removeBook.addEventListener("click", () => {
+            library.splice(i, 1);
+            books.innerHTML = "";
+            showBooks();
+        });
         document.querySelector(".books-container").appendChild(newBook);
     }
 }
