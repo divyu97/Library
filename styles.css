@@ -134,3 +134,30 @@ dialog::backdrop {
 .cancel {
     background-color: red;
 }
+
+.status-options {
+    position: relative;
+    bottom: 20px;
+    background-color: white;
+    width: 132.83px;
+    left: 25px;
+    bottom: 31px;
+    border-radius: 8px;
+}
+
+ul {
+    font-size: 15px;
+    font-family: Roboto, Arial;
+    display: flex;
+    list-style: none;
+    flex-direction: column;
+    padding: 8px;
+    gap: 8px;
+    justify-content: left;
+    font-weight: 700;
+}
+
+ul li:hover {
+    cursor: pointer;
+    background-color: rgba(128, 128, 128, 0.3);
+}
